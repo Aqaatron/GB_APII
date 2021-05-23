@@ -11,8 +11,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Data.SQLite;
-using MetricsAgent.Repositories;
-using MetricsAgent.MetricsClasses;
+using MetricsAgent.DAL.Repositories;
+using MetricsAgent.DAL.MetricsClasses;
 
 namespace MetricsAgent
 {

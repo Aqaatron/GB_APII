@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MetricsAgent.DAL.MetricsClassesDto
 {
-    public class NetworkMetric
+    public class NetworkMetricDto
     {
         public int Id { get; set; }
 

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 using MetricsManager.Enums;
 using Microsoft.Extensions.Logging;
 using System.Data.SQLite;
-using MetricsAgent.Repositories;
-using MetricsAgent.MetricsClasses;
-using MetricsAgent.Response;
-using MetricsAgent.Requests;
+using MetricsAgent.DAL.Repositories;
+using MetricsAgent.DAL.MetricsClasses;
+using MetricsAgent.DAL.Response;
+using MetricsAgent.DAL.Requests;
 
 namespace MetricsAgent.Controllers
 {
