@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GB_Api\\MetricsService\\MetricsService\\MetricsAgent\\MetricsAgent.csproj": {}
+    "D:\\GB_APII\\MetricsService\\MetricsAgent\\MetricsAgent.csproj": {}
   },
   "projects": {
-    "D:\\GB_Api\\MetricsService\\MetricsService\\MetricsAgent\\MetricsAgent.csproj": {
+    "D:\\GB_APII\\MetricsService\\MetricsAgent\\MetricsAgent.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GB_Api\\MetricsService\\MetricsService\\MetricsAgent\\MetricsAgent.csproj",
+        "projectUniqueName": "D:\\GB_APII\\MetricsService\\MetricsAgent\\MetricsAgent.csproj",
         "projectName": "MetricsAgent",
-        "projectPath": "D:\\GB_Api\\MetricsService\\MetricsService\\MetricsAgent\\MetricsAgent.csproj",
+        "projectPath": "D:\\GB_APII\\MetricsService\\MetricsAgent\\MetricsAgent.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\GB_Api\\MetricsService\\MetricsService\\MetricsAgent\\obj\\",
+        "outputPath": "D:\\GB_APII\\MetricsService\\MetricsAgent\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\GB_Api\\MetricsService\\MetricsService\\MetricsManager\\MetricsManager.csproj": {
-                "projectPath": "D:\\GB_Api\\MetricsService\\MetricsService\\MetricsManager\\MetricsManager.csproj"
+              "D:\\GB_APII\\MetricsService\\MetricsManager\\MetricsManager.csproj": {
+                "projectPath": "D:\\GB_APII\\MetricsService\\MetricsManager\\MetricsManager.csproj"
               }
             }
           }
@@ -44,6 +44,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Moq": {
+              "target": "Package",
+              "version": "[4.16.1, )"
+            },
             "System.Data.SQLite.Core": {
               "target": "Package",
               "version": "[1.0.113.7, )"
@@ -71,14 +75,14 @@
         }
       }
     },
-    "D:\\GB_Api\\MetricsService\\MetricsService\\MetricsManager\\MetricsManager.csproj": {
+    "D:\\GB_APII\\MetricsService\\MetricsManager\\MetricsManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GB_Api\\MetricsService\\MetricsService\\MetricsManager\\MetricsManager.csproj",
+        "projectUniqueName": "D:\\GB_APII\\MetricsService\\MetricsManager\\MetricsManager.csproj",
         "projectName": "MetricsManager",
-        "projectPath": "D:\\GB_Api\\MetricsService\\MetricsService\\MetricsManager\\MetricsManager.csproj",
+        "projectPath": "D:\\GB_APII\\MetricsService\\MetricsManager\\MetricsManager.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\GB_Api\\MetricsService\\MetricsService\\MetricsManager\\obj\\",
+        "outputPath": "D:\\GB_APII\\MetricsService\\MetricsManager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -110,6 +114,10 @@
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[5.0.1, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.16.1, )"
             },
             "NLog": {
               "target": "Package",
