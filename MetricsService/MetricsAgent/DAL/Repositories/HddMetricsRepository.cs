@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Data.SQLite;
-using MetricsAgent.MetricsClasses;
+using MetricsAgent.DAL.MetricsClasses;
+using MetricsAgent.DAL.Interfaces;
 
-namespace MetricsAgent.Repositories
+namespace MetricsAgent.DAL.Repositories
 {
-    public interface ICpuMetricsRepository : IRepository<CpuMetric>
+    public interface IHddMetricsRepository : IRepository<HddMetric>
     {
 
     }
-    public class CpuMetricsRepository : ICpuMetricsRepository
+    public class HddMetricsRepository : IHddMetricsRepository
     {
         private const string ConnectionString = "Data Source=metrics.db;Version=3;Pooling=true;Max Pool Size=100;";
 
-        public void Create(CpuMetric item)
+        public void Create(HddMetric item)
         {
             using var connection = new SQLiteConnection(ConnectionString);
             connection.Open();
@@ -37,7 +38,7 @@ namespace MetricsAgent.Repositories
             cmd.ExecuteNonQuery();
         }
 
-        public IList<CpuMetric> GetAll()
+        public IList<HddMetric> GetAll()
         {
             using var connection = new SQLiteConnection(ConnectionString);
             connection.Open();
@@ -46,7 +47,7 @@ namespace MetricsAgent.Repositories
             // прописываем в команду SQL запрос на получение всех данных из таблицы
             cmd.CommandText = "SELECT * FROM cpumetrics";
 
-            var returnList = new List<CpuMetric>();
+            var returnList = new List<HddMetric>();
 
             using (SQLiteDataReader reader = cmd.ExecuteReader())
             {
@@ -54,7 +55,7 @@ namespace MetricsAgent.Repositories
                 while (reader.Read())
                 {
                     // добавляем объект в список возврата
-                    returnList.Add(new CpuMetric
+                    returnList.Add(new HddMetric
                     {
                         Id = reader.GetInt32(0),
 
@@ -71,7 +72,7 @@ namespace MetricsAgent.Repositories
 
 
         }
-        public CpuMetric GetById(int id)
+        public HddMetric GetById(int id)
         {
             using var connection = new SQLiteConnection(ConnectionString);
 
@@ -87,7 +88,7 @@ namespace MetricsAgent.Repositories
                 if (reader.Read())
                 {
                     // возвращаем прочитанное
-                    return new CpuMetric
+                    return new HddMetric
                     {
                         Id = reader.GetInt32(0),
                         Value = reader.GetInt32(1),

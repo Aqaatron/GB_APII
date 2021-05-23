@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MetricsAgent.MetricsClasses
+namespace MetricsAgent.DAL.MetricsClassesDto
 {
-    public class CpuMetric
+    public class DotNetMetricDto
     {
         public int Id { get; set; }
 
         public int Value { get; set; }
 
-        public long Time { get; set; }
-
+        public DateTimeOffset Time { get; set; }
     }
 }

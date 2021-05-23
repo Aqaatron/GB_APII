@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MetricsAgent.MetricsClasses
+namespace MetricsAgent.DAL.Requests
 {
-    public class DotNetMetric
+    public class HddMetricCreateRequest
     {
-        public int Id { get; set; }
-
-        public int Value { get; set; }
-
         public long Time { get; set; }
+        public int Value { get; set; }
     }
 }

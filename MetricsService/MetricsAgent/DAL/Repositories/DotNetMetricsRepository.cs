@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Data.SQLite;
-using MetricsAgent.MetricsClasses;
+using MetricsAgent.DAL.MetricsClasses;
+using MetricsAgent.DAL.Interfaces;
 
-namespace MetricsAgent.Repositories
+namespace MetricsAgent.DAL.Repositories
 {
     public interface IDotNetMetricsRepository : IRepository<DotNetMetric>
     {

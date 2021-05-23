@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MetricsAgent.MetricsClasses
+namespace MetricsAgent.DAL.MetricsClassesDto
 {
     public class NetworkMetric
     {
@@ -11,6 +11,6 @@ namespace MetricsAgent.MetricsClasses
 
         public int Value { get; set; }
 
-        public long Time { get; set; }
+        public DateTimeOffset Time { get; set; }
     }
 }
