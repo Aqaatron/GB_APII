@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MetricsAgent.DAL.MetricsClasses;
+using MetricsAgent.DAL.MetricsClassesDto;
 
 namespace MetricsAgent.DAL.Response
 {
     public class AllCpuMetricsResponse
     {
-        public List<CpuMetric> Metrics { get; set; }
+        public List<CpuMetricDto> Metrics { get; set; }
 
     }
 
