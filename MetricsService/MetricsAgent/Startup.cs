@@ -17,6 +17,10 @@ using MetricsAgent.DAL;
 using AutoMapper;
 using Dapper;
 using FluentMigrator.Runner;
+using Quartz;
+using Quartz.Spi;
+using MetricsAgent.Jobs;
+using Quartz.Impl;
 
 namespace MetricsAgent
 {
@@ -57,6 +61,19 @@ namespace MetricsAgent
                 ).AddLogging(lb => lb
                     .AddFluentMigratorConsole());
 
+            // ДОбавляем сервисы
+            services.AddSingleton<IJobFactory, SingletonJobFactory>();
+            services.AddSingleton<ISchedulerFactory, StdSchedulerFactory>();
+            // добавляем нашу задачу
+            services.AddSingleton<CpuMetricJob>();
+            services.AddSingleton(new JobSchedule(
+                jobType: typeof(CpuMetricJob),
+                cronExpression: "0/5 * * * * ?")); // запускать каждые 5 секунд
+            services.AddSingleton(new JobSchedule(
+                jobType: typeof(RamMetricJob),
+                cronExpression: "0/5 * * * * ?"));
+
+            services.AddHostedService<QuartzHostedService>();
         }
         public void getConnectionString()
         {
