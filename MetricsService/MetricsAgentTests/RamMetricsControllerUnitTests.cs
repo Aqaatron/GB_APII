@@ -32,8 +32,8 @@ namespace MetricsAgentTests
         public void GetMetricsFromAgent_ReturnsOk()
         {
             //Arrange
-            var fromTime = TimeSpan.FromSeconds(0);
-            var toTime = TimeSpan.FromSeconds(100);
+            var fromTime = DateTimeOffset.Parse("2021 - 05 - 01 00:00:00");
+            var toTime = DateTimeOffset.Parse("2021 - 05 - 01 02:00:00");
             //Act
             var result = controller.GetMetrics(fromTime, toTime);
 

@@ -52,6 +52,18 @@
               "target": "Package",
               "version": "[2.0.90, )"
             },
+            "FluentMigrator": {
+              "target": "Package",
+              "version": "[3.2.16, )"
+            },
+            "FluentMigrator.Runner": {
+              "target": "Package",
+              "version": "[3.2.16, )"
+            },
+            "FluentMigrator.Runner.SQLite": {
+              "target": "Package",
+              "version": "[3.2.16, )"
+            },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[5.0.1, )"
@@ -155,6 +167,18 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.0.90, )"
+            },
+            "FluentMigrator": {
+              "target": "Package",
+              "version": "[3.2.16, )"
+            },
+            "FluentMigrator.Runner": {
+              "target": "Package",
+              "version": "[3.2.16, )"
+            },
+            "FluentMigrator.Runner.SQLite": {
+              "target": "Package",
+              "version": "[3.2.16, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
