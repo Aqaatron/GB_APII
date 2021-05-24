@@ -122,3 +122,5 @@ D:\GB_APII\MetricsService\MetricsAgentTests\obj\Debug\netcoreapp3.1\MetricsAgent
 D:\GB_APII\MetricsService\MetricsAgentTests\obj\Debug\netcoreapp3.1\MetricsAgentTests.dll
 D:\GB_APII\MetricsService\MetricsAgentTests\obj\Debug\netcoreapp3.1\MetricsAgentTests.pdb
 D:\GB_APII\MetricsService\MetricsAgentTests\obj\Debug\netcoreapp3.1\MetricsAgentTests.genruntimeconfig.cache
+D:\GB_APII\MetricsService\MetricsAgentTests\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\GB_APII\MetricsService\MetricsAgentTests\bin\Debug\netcoreapp3.1\Dapper.dll

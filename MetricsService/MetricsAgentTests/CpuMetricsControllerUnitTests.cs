@@ -5,8 +5,8 @@ using MetricsAgent.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using MetricsManager.Enums;
 using Moq;
-using MetricsAgent.Repositories;
-using MetricsAgent.MetricsClasses;
+using MetricsAgent.DAL.Repositories;
+using MetricsAgent.DAL.MetricsClasses;
 using Microsoft.Extensions.Logging;
 
 namespace MetricsAgentTests

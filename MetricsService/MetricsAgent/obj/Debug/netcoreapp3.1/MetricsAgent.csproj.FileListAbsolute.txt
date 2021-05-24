@@ -39,3 +39,5 @@ D:\GB_APII\MetricsService\MetricsAgent\obj\Debug\netcoreapp3.1\MetricsAgent.cspr
 D:\GB_APII\MetricsService\MetricsAgent\obj\Debug\netcoreapp3.1\MetricsAgent.dll
 D:\GB_APII\MetricsService\MetricsAgent\obj\Debug\netcoreapp3.1\MetricsAgent.pdb
 D:\GB_APII\MetricsService\MetricsAgent\obj\Debug\netcoreapp3.1\MetricsAgent.genruntimeconfig.cache
+D:\GB_APII\MetricsService\MetricsAgent\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\GB_APII\MetricsService\MetricsAgent\bin\Debug\netcoreapp3.1\Dapper.dll

@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 using MetricsManager.Enums;
 using Microsoft.Extensions.Logging;
 using System.Data.SQLite;
-using MetricsAgent.Repositories;
-using MetricsAgent.MetricsClasses;
-using MetricsAgent.Response;
-using MetricsAgent.Requests;
+using MetricsAgent.DAL.Repositories;
+using MetricsAgent.DAL.MetricsClasses;
+using MetricsAgent.DAL.MetricsClassesDto;
+using MetricsAgent.DAL.Response;
+using MetricsAgent.DAL.Requests;
+using AutoMapper;
 
 namespace MetricsAgent.Controllers
 {
@@ -22,19 +24,35 @@ namespace MetricsAgent.Controllers
 
         private readonly IHddMetricsRepository _repository;
 
-        public HddMetricsController(ILogger<HddMetricsController> logger, IHddMetricsRepository repository)
+        private readonly IMapper _mapper;
+
+        public HddMetricsController(ILogger<HddMetricsController> logger, IHddMetricsRepository repository, IMapper mapper)
         {
             this._logger = logger;
+
             this._repository = repository;
+
+            this._mapper = mapper;
 
             _logger.LogDebug(1, "NLog встроен в HddMetricsController");
         }
 
-        [HttpGet("left")]
-        public IActionResult GetMetrics([FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime)
+        [HttpGet("from/{fromTime}/to/{toTime}")]
+        public IActionResult GetMetrics([FromRoute] DateTimeOffset fromTime, [FromRoute] DateTimeOffset toTime)
         {
-            _logger.LogInformation("Hello! This is my first message in logs!");
-            return Ok();
+            var metrics = _repository.GetByTimePeriod(fromTime, toTime);
+
+            var response = new AllHddMetricsResponse()
+            {
+                Metrics = new List<HddMetricDto>()
+            };
+
+            foreach (var metric in metrics)
+            {
+                response.Metrics.Add(_mapper.Map<HddMetricDto>(metric));
+            }
+
+            return Ok(response);
         }
 
         [HttpPost("create")]
@@ -47,25 +65,6 @@ namespace MetricsAgent.Controllers
             });
 
             return Ok();
-        }
-
-
-        [HttpGet("all")]
-        public IActionResult GetAll()
-        {
-            var metrics = _repository.GetAll();
-
-            var response = new AllHddMetricsResponse()
-            {
-                Metrics = new List<HddMetric>()
-            };
-
-            foreach (var metric in metrics)
-            {
-                response.Metrics.Add(new HddMetric { Time = metric.Time, Value = metric.Value, Id = metric.Id });
-            }
-
-            return Ok(response);
         }
     }
 }
