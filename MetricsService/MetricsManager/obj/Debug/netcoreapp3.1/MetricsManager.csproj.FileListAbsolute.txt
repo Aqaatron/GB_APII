@@ -72,4 +72,5 @@ D:\GB_APII\MetricsService\MetricsManager\bin\Debug\netcoreapp3.1\runtimes\win-x6
 D:\GB_APII\MetricsService\MetricsManager\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 D:\GB_APII\MetricsService\MetricsManager\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\GB_APII\MetricsService\MetricsManager\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\GB_APII\MetricsService\MetricsManager\obj\Debug\netcoreapp3.1\MetricsManager.csprojAssemblyReference.cache
+D:\GB_APII\MetricsService\MetricsManager\bin\Debug\netcoreapp3.1\Quartz.dll
+D:\GB_APII\MetricsService\MetricsManager\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
