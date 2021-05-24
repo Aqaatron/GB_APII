@@ -19,10 +19,11 @@ namespace MetricsAgent.DAL.Repositories
         public CpuMetricsRepository()
         {
             SqlMapper.AddTypeHandler(new DateTimeOffsetHandler());
+            ConnectionString = ConnectionStringClass.ConnectionString;
         }
         public void getConnectionString()
         {
-            ConnectionString = ConnectionStringClass.ConnectionString;
+            
         }
 
         public void Create(CpuMetric item)

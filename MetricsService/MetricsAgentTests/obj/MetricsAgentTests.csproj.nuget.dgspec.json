@@ -95,6 +95,10 @@
               "target": "Package",
               "version": "[1.0.113.7, )"
             },
+            "System.Diagnostics.PerformanceCounter": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -202,6 +206,10 @@
             "System.Data.SQLite.Core": {
               "target": "Package",
               "version": "[1.0.113.7, )"
+            },
+            "System.Diagnostics.PerformanceCounter": {
+              "target": "Package",
+              "version": "[5.0.1, )"
             }
           },
           "imports": [
@@ -305,6 +313,10 @@
             "System.Data.SQLite.Core": {
               "target": "Package",
               "version": "[1.0.113.7, )"
+            },
+            "System.Diagnostics.PerformanceCounter": {
+              "target": "Package",
+              "version": "[5.0.1, )"
             }
           },
           "imports": [
