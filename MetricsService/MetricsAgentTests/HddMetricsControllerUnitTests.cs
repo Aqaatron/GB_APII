@@ -8,24 +8,28 @@ using Moq;
 using MetricsAgent.DAL.Repositories;
 using MetricsAgent.DAL.MetricsClasses;
 using Microsoft.Extensions.Logging;
+using AutoMapper;
 
 namespace MetricsAgentTests
 {
     public class HddMetricsControllerUnitTests
     {
-        private HddMetricsController controller;
+        private HddMetricsController _controller;
 
-        private Mock<ILogger<HddMetricsController>> mockLogger;
+        private Mock<ILogger<HddMetricsController>> _mockLogger;
 
-        private Mock<IHddMetricsRepository> mockRepository;
+        private Mock<IHddMetricsRepository> _mockRepository;
+
+        private Mock<IMapper> _mockMapper;
 
         public HddMetricsControllerUnitTests()
         {
-            this.mockLogger = new Mock<ILogger<HddMetricsController>>();
+            this._mockLogger = new Mock<ILogger<HddMetricsController>>();
 
-            this.mockRepository = new Mock<IHddMetricsRepository>();
+            this._mockRepository = new Mock<IHddMetricsRepository>();
+            this._mockMapper = new Mock<IMapper>();
 
-            this.controller = new HddMetricsController(mockLogger.Object, mockRepository.Object);
+            this._controller = new HddMetricsController(_mockLogger.Object, _mockRepository.Object, _mockMapper.Object);
         }
 
         [Fact]
@@ -35,7 +39,7 @@ namespace MetricsAgentTests
             var fromTime = DateTimeOffset.Parse("2021 - 05 - 01 00:00:00");
             var toTime = DateTimeOffset.Parse("2021 - 05 - 01 02:00:00");
             //Act
-            var result = controller.GetMetrics(fromTime, toTime);
+            var result = _controller.GetMetrics(fromTime, toTime);
 
             // Assert
             _ = Assert.IsAssignableFrom<IActionResult>(result);
@@ -46,14 +50,14 @@ namespace MetricsAgentTests
         {
             // устанавливаем параметр заглушки
             // в заглушке прописываем что в репозиторий прилетит CpuMetric объект
-            mockRepository.Setup(repository => repository.Create(It.IsAny<HddMetric>())).Verifiable();
+            _mockRepository.Setup(repository => repository.Create(It.IsAny<HddMetric>())).Verifiable();
 
             // выполняем действие на контроллере
             //var result = controller.Create(new MetricsAgent.Requests.CpuMetricCreateRequest { Time = TimeSpan.FromSeconds(1), Value = 50 });
 
             // проверяем заглушку на то, что пока работал контроллер
             // действительно вызвался метод Create репозитория с нужным типом объекта в параметре
-            mockRepository.Verify(repository => repository.Create(It.IsAny<HddMetric>()), Times.AtMostOnce());
+            _mockRepository.Verify(repository => repository.Create(It.IsAny<HddMetric>()), Times.AtMostOnce());
         }
 
     }
