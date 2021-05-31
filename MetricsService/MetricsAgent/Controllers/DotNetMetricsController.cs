@@ -49,7 +49,7 @@ namespace MetricsAgent.Controllers
             return Ok();
         }
 
-        [HttpGet("metricsController/{fromTime}/to/{toTime}")]
+        [HttpGet("metricsController/from/{fromTime}/to/{toTime}")]
         public IActionResult GetMetrics([FromRoute] DateTimeOffset fromTime, [FromRoute] DateTimeOffset toTime)
         {
             var metrics = _repository.GetByTimePeriod(fromTime, toTime);
