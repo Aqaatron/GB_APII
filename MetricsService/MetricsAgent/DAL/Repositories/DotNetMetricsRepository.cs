@@ -20,11 +20,12 @@ namespace MetricsAgent.DAL.Repositories
         public DotNetMetricsRepository()
         {
             SqlMapper.AddTypeHandler(new DateTimeOffsetHandler());
+            ConnectionString = ConnectionStringClass.ConnectionString;
         }
 
         public void getConnectionString()
         {
-            ConnectionString = ConnectionStringClass.ConnectionString;
+            
         }
         public void Create(DotNetMetric item)
         {

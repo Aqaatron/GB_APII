@@ -20,10 +20,11 @@ namespace MetricsAgent.DAL.Repositories
         public RamMetricsRepository()
         {
             SqlMapper.AddTypeHandler(new DateTimeOffsetHandler());
+            ConnectionString = ConnectionStringClass.ConnectionString;
         }
         public void getConnectionString()
         {
-            ConnectionString = ConnectionStringClass.ConnectionString;
+            
         }
 
         public void Create(RamMetric item)

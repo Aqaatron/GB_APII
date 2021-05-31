@@ -19,10 +19,11 @@ namespace MetricsAgent.DAL.Repositories
         public NetworkMetricsRepository()
         {
             SqlMapper.AddTypeHandler(new DateTimeOffsetHandler());
+            ConnectionString = ConnectionStringClass.ConnectionString;
         }
         public void getConnectionString()
         {
-            ConnectionString = ConnectionStringClass.ConnectionString;
+            
         }
 
         public void Create(NetworkMetric item)
