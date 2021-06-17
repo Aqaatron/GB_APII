@@ -19,10 +19,11 @@ namespace MetricsAgent.DAL.Repositories
         public CpuMetricsRepository()
         {
             SqlMapper.AddTypeHandler(new DateTimeOffsetHandler());
+            ConnectionString = ConnectionStringClass.ConnectionString;
         }
         public void getConnectionString()
         {
-            ConnectionString = ConnectionStringClass.ConnectionString;
+            
         }
 
         public void Create(CpuMetric item)
@@ -47,16 +48,19 @@ namespace MetricsAgent.DAL.Repositories
 
         public IList<CpuMetric> GetByTimePeriod(DateTimeOffset fromTime, DateTimeOffset toTime)
         {
-            long fromTimeUnixTime = fromTime.ToUnixTimeSeconds();
+            //long fromTimeUnixTime = fromTime.ToUnixTimeSeconds();
 
-            long toTimeUnixTime = toTime.ToUnixTimeSeconds();
+            //long toTimeUnixTime = toTime.ToUnixTimeSeconds();
 
             using (var connection = new SQLiteConnection(ConnectionString))
             {
                 // читаем при помощи Query и в шаблон подставляем тип данных
                 // объект которого Dapper сам и заполнит его поля
                 // в соответсвии с названиями колонок
-                return connection.Query<CpuMetric>("SELECT *FROM cpumetrics WHERE time >= @fromTimeUnixTime AND time <= @toTimeUnixTime").ToList();
+                return connection.Query<CpuMetric>("SELECT *FROM cpumetrics WHERE time >= @fromTime AND time <= @toTime", new
+                {   fromTime = fromTime.ToUnixTimeSeconds(),
+                    toTime = toTime.ToUnixTimeSeconds()
+                }).ToList();
             }
         }
 

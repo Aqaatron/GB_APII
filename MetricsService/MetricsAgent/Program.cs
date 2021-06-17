@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using NLog.Web;
+using System.Diagnostics;
 
 namespace MetricsAgent
 {
@@ -14,6 +15,7 @@ namespace MetricsAgent
     {
         public static void Main(string[] args)
         {
+
             var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
             try

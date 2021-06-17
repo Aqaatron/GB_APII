@@ -36,7 +36,7 @@ namespace MetricsAgent.Controllers
             _logger.LogDebug(1, "NLog встроен в RamMetricsController");
         }
 
-        [HttpGet("from/{fromTime}/to/{toTime}")]
+        [HttpGet("metricsController/from/{fromTime}/to/{toTime}/")]
         public IActionResult GetMetrics([FromRoute] DateTimeOffset fromTime, [FromRoute] DateTimeOffset toTime)
         {
             var metrics = _repository.GetByTimePeriod(fromTime, toTime);
